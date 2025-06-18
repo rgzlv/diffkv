@@ -1,0 +1,14 @@
+diffkv shows the semantic differences between two files that contain key-value
+pairs and, optionally, comments.
+Since the diffing is semantic the key-value pair order doesn't matter, except
+that only the first key-value pair found in a file is used for comparisons.
+The syntax is the same as in the current Linux kernel config files.
+Whitespace between BOL and key, key and '=', '=' and value, value and EOL is
+ignored.
+Usage: diffkv file1 file2.
+The output is a single line indicating the difference between the key-value
+pairs or no output if there is no difference.
+If a key exists in file1 but not in file2, "< $key2" is output.
+If a key exists in file1 and file2 but the values differ,
+"! $key1=$value1 > $value2" is output.
+If a key exists in file2 but not in file1, "> $key2" is output.
