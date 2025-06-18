@@ -196,8 +196,10 @@ diff(struct kv **kvs1, struct kv **kvs2)
 			printf("! %s=%s > %s\n", (*kv1)->k, (*kv1)->v, (*match)->v);
 		free(*kv1);
 		*kv1 = KV_IGNORE;
-		free(*match);
-		*match = KV_IGNORE;
+		if (match) {
+			free(*match);
+			*match = KV_IGNORE;
+		}
 	}
 
 	for (kv2 = kvs2; *kv2; kv2++) {
