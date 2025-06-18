@@ -8,7 +8,7 @@ ignored.
 Usage: diffkv file1 file2.
 The output is a single line indicating the difference between the key-value
 pairs or no output if there is no difference.
-If a key exists in file1 but not in file2, "< $key2" is output.
+If a key exists in file1 but not in file2, "< $key1" is output.
 If a key exists in file1 and file2 but the values differ,
 "! $key1=$value1 > $value2" is output.
-If a key exists in file2 but not in file1, "> $key2" is output.
+If a key exists in file2 but not in file1, "> $key2=$value2" is output.
